@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load embed_video_tags %}
+{% block body %}
+
+
+
+
+
+<!--header section-->
+<section class="page-header">
+    <div class="container-xl">
+        <div class="text-center">
+            <h1 class="mt-0 mb-2">ALL Videod</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Videod</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<!--Filter containt-->
+
+<section class="main-content">
+    <div class="container-xl">
+        <div class="text-center">
+            <div class="row gy-4">
+
+            </div>
+            <div class="container mb-6 mb-xl-8 z-index-2">
+                <div class="d-xl-flex align-items-center">
+                    <p class="mb-xl-0">We found <span class="text-dark">834 courses</span> available for you</p>
+                    <div class="ms-xl-auto d-xl-flex flex-wrap">
+                        <div class="mb-4 mb-xl-0 ms-xl-4">
+                            <!-- Search -->
+                            <form class="d-flex search-form">
+                                <input class="form-control me-2" type="search" placeholder="Search and press enter ..." aria-label="Search">
+                                <button class="btn btn-default btn-sm" type="submit"><i class="icon-magnifier"></i></button>
+                            </form>
+                        </div>
+                            
+        
+                        <div class="mb-4 mb-xl-0 ms-xl-4">
+                            <div class="price_slider mt-30">
+                                
+                               
+                                    <form class="d-flex search-form">
+                                        <div style="padding-top:10px;">
+                                        <input type="range" class="multi-range success me-2" style="color:red;" value="" min="" max=""/>
+                                        </div>
+                                        <div style="padding-ri:10px;">
+                                        <input type="number" id="maxPrice" readonly="" name="FilterPrice" onkeyup="rangeInput.value=this.value" hidden/>
+                                        <button class="btn btn-default btn-sm" type="submit"id="priceFilterBtn">Filter</i></button>
+                                        </div>
+                                    </form>
+                                
+                            </div>
+                            
+                        </div>
+        
+                       
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>  
+</section>
+
+
+<!-- section main content -->
+{% for i in videos %}
+<section class="main-content mt-5">
+    <div class="container-xl">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-12">
+
+                <div class="row gy-4">
+                    
+                    <div class="col-sm-4">
+                        <!-- post -->
+                        <div class="post post-grid rounded bordered">
+                            <div class="thumb top-rounded">
+                                <a href="#" class="category-badge position-absolute">Lifestyle</a>
+                                <span class="post-format">
+                                    <i class="icon-picture"></i>
+                                </span>
+                                <a href="">
+                                    <div class="inner">
+                                        <img src="{{i.thumbnail.url}}" alt="post-title" />
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="details">
+                                <ul class="meta list-inline mb-0">
+                                    <li class="list-inline-item"><a href="#"><img src="{% static 'images/other/author-sm.png' %}" class="author" alt="author"/>Katen Doe</a></li>
+                                    <li class="list-inline-item">29 March 2021</li>
+                                </ul>
+                                <h5 class="post-title mb-3 mt-3"><a href="blog-single.html">How To Become Better With Building In 1 Month</a></h5>
+                                <p class="excerpt mb-0">I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence.</p>
+                            </div>
+                            {% comment %} <div class="post-bottom clearfix d-flex align-items-center">
+                                <div class="social-share me-auto">
+                                    <button class="toggle-button icon-share"></button>
+                                    <ul class="icons list-unstyled list-inline mb-0">
+                                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                                        <li class="list-inline-item"><a href="#"><i class="fab fa-telegram-plane"></i></a></li>
+                                        <li class="list-inline-item"><a href="#"><i class="far fa-envelope"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="more-button float-end">
+                                    <a href="blog-single.html"><span class="icon-options"></span></a>
+                                </div>
+                            </div> {% endcomment %}
+                        </div>
+                    </div>
+                   
+
+                </div>
+
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item active" aria-current="page">
+                            <span class="page-link">1</span>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+           
+
+        </div>
+
+    </div>
+</section>
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
