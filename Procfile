@@ -1,1 +1,1 @@
-web: gunicorn abi.wsgi
+web gunicorn abi.wsgi:apllication --log-file -
