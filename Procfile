@@ -1,1 +1,1 @@
-web: gunicorn abi.wsgi --log-file
+web: gunicorn abi.wsgi --log-file -
